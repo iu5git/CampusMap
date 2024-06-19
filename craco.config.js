@@ -3,6 +3,8 @@ const path = require("path")
 module.exports = {
   webpack: {
     configure: (webpackConfig) => {
+      webpackConfig.output.publicPath = "/CampusMap/"
+
       webpackConfig.module.rules[1].oneOf.unshift(
         {
           test: /\.html$/i,
