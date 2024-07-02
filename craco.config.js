@@ -2,8 +2,10 @@ const path = require("path")
 
 module.exports = {
   webpack: {
-    configure: (webpackConfig) => {
-      webpackConfig.output.publicPath = "/CampusMap/"
+    configure: (webpackConfig, { env }) => {
+      if (env === "production") {
+        webpackConfig.output.publicPath = "/CampusMap/"
+      }
 
       webpackConfig.module.rules[1].oneOf.unshift(
         {

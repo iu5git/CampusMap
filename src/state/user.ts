@@ -7,8 +7,7 @@ type State = {
 }
 
 const initialState = {
-  user: null,
-  // user: { id: "user", login: "admin" },
+  user: { id: "user", login: "admin" },
 } as State
 
 const userSlice = createSlice({

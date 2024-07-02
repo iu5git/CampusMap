@@ -10,17 +10,19 @@ import { Editor } from "./pages/Editor"
 import { Viewer } from "./pages/Viewer"
 import { Auth } from "./pages/Auth"
 
+const publicPath = process.env.NODE_ENV === "development" ? "/" : "/CampusMap/"
+
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: publicPath + "",
     element: <Viewer />,
   },
   {
-    path: "/auth",
+    path: publicPath + "auth",
     element: <Auth />,
   },
   {
-    path: "/editor",
+    path: publicPath + "editor",
     element: <Editor />,
   },
 ])

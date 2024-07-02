@@ -14,6 +14,7 @@ import { isSearchable } from "../../utils"
 import { WeightedGraph } from "../../dijkstra"
 import { Link } from "../../interfaces"
 import { DefaultOptionType, FilterFunc } from "rc-select/lib/Select"
+import { Link as LinkRoute } from "react-router-dom"
 
 const textTypeMapper: Record<string, string> = {
   auditorium: "аудитория",
@@ -108,6 +109,9 @@ export const RouteToolbar: FC = () => {
       </Button>
       <Button onClick={clearRoute} disabled={!routeFrom && !routeTo}>
         Очистить
+      </Button>
+      <Button>
+        <LinkRoute to={"./editor"}>Редактор</LinkRoute>
       </Button>
     </Container>
   )
